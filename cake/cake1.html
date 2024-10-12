@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>charmed cakes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+           
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        .hero {
+            text-align: center;
+            background: url('banner.jpg') no-repeat center center;
+            height: 300px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        .cake-grid, .category-grid {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .cake-card, .category-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: calc(33% - 20px);
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            
+        }
+        body{
+            background-color: rgba(128, 125, 125, 0);
+        
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Charmed Cakes</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cakes">Cakes</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <div class=" content">
+      
+        <p>Welcome to charmed cakes, where every confection tells
+            a story of passion and dedication. Founded by a team of
+            seasoned bakers with a shared love for crafting
+            delectable treats, our bakery embodies a commitment to
+            quality,
+            creativity, and customer satisfaction. From
+            the finest ingredients sourced locally to the meticulous
+            attention
+            to detail in every recipe, we take pride
+            in delivering indulgent experiences that
+            delight taste buds and
+            warm
+            hearts. With each cake, pastry, and dessert,
+            we strive to create moments of joy and celebration, making
+            every
+            occasion a little sweeter.</p>
+       
+    </div>
+</section>
+    <section id="cakes">
+        <h2>Best-Selling Cakes</h2>
+        <div class="cake-grid">
+            <div class="cake-card" onclick="showDetails('Chocolate Cake')">
+                <img src="chocklate2 cake.jpeg" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <button onclick="addtocart">addtocart</button>
+                <p>$ 30.00</p>
+            </div>
+            <div class="cake-card" onclick="showDetails('Vanilla Cake')">
+                <img src="venellacake.jpeg" alt="Vanilla Cake">
+                <h3>Vanilla Cake</h3>
+                <button onclick="addtocart">addtocart</button>
+                <p>$ 27.00</p>
+            </div>
+            <div class="cake-card" onclick="showDetails('Red Velvet Cake')">
+                <img src="red vivlet2 cake.jpeg" alt="Red Velvet Cake">
+                <h3>Red Velvet Cake</h3>
+                <button onclick="addtocart">addtocart</button>
+                <p>$ 40.00</p>
+            </div>
+            <div class="cake-card" onclick="showDetails('Chiffon cake')">
+                <img src="Chiffon cake.jpeg" alt="Chiffon cake">
+                <h3>Chiffon cake</h3>
+                <button onclick="addtocart">addtocart</button>
+                <p>$ 32.00</p>
+            </div>
+            <div class="cake-card" onclick="showDetails('coffee cake')">
+                <img src="coffe cake.jpeg" alt="Coffe cake">
+                <h3>coffee cake</h3>
+                <button onclick="addtocart">addtocart</button>
+                <p>$ 35.00</p>
+            </div>
+            <div class="cake-card" onclick="showDetails('black forest cake')">
+                <img src="black forest cake.jpeg" alt="black forest cake">
+                <h3>black forest cake</h3>
+                <button onclick="addtocart">addtocart</button>
+                <p>$ 29.00</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories">
+        <h2>Cake Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <h3>Birthday Cakes</h3>
+            </div>
+            <div class="category-card">
+                <h3>Wedding Cakes</h3>
+            </div>
+            <div class="category-card">
+                <h3>Custom Cakes</h3>
+            </div>
+            <div class="category-card">
+                <h3>sponge cake</h3>
+            </div>
+            <div class="category-card">
+                <h3>Angel food cake</h3>
+            </div>
+            <div class="category-card">
+                <h3>Butter Cake</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>Customer Testimonials</h2>
+        <div id="testimonial-list"></div>
+        <form id="testimonial-form" onsubmit="submitTestimonial(event)">
+            <textarea placeholder="Leave your testimonial..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Contact us: info@example.com</p>
+        <p>Follow us on social media!</p>
+    </footer>
+
+    <script>
+        function showDetails(cakeName) {
+            alert('Showing details for ' + cakeName);
+            
+        }
+
+        function submitTestimonial(event) {
+            event.preventDefault();
+            const testimonialList = document.getElementById('testimonial-list');
+            const testimonialText = event.target[0].value;
+            
+            const newTestimonial = document.createElement('p');
+            newTestimonial.textContent = testimonialText;
+            testimonialList.appendChild(newTestimonial);
+            
+            event.target.reset(); 
+        }
+    </script>
+    
+    
+</body>
+</html>
